@@ -1,9 +1,9 @@
-import React from "react";
-import { CssBaseline } from "@mui/material";
-import { Route, Switch } from "react-router-dom";
+import React from 'react';
+import { CssBaseline } from '@mui/material';
+import { Route, Switch } from 'react-router-dom';
 
 // Importing the styles from the styles.js file.
-import useStyles from "./styles";
+import useStyles from './styles';
 
 // Importing the components that will be used in the App component.
 import {
@@ -12,18 +12,18 @@ import {
   Actors,
   Profile,
   NavBar,
-} from "./";
+} from '.';
 
 // App component is the main component that holds the NavBar and the main content of the app.
 const App = () => {
   const classes = useStyles();
 
-  return(
+  return (
     <div className={classes.root}>
       <CssBaseline />
       <NavBar />
       <main className={classes.content}>
-        <div className={classes.toolbar}/>
+        <div className={classes.toolbar} />
         <Switch>
           <Route exact path="/movie/:id">
             <MovieInformation />
@@ -41,8 +41,6 @@ const App = () => {
       </main>
     </div>
   );
-  
-}
-
+};
 
 export default App;
