@@ -2,8 +2,10 @@ import React from "react";
 import { CssBaseline } from "@mui/material";
 import { Route, Switch } from "react-router-dom";
 
+// Importing the styles from the styles.js file.
 import useStyles from "./styles";
 
+// Importing the components that will be used in the App component.
 import {
   MovieInformation,
   Movies,
@@ -12,6 +14,7 @@ import {
   NavBar,
 } from "./";
 
+// App component is the main component that holds the NavBar and the main content of the app.
 const App = () => {
   const classes = useStyles();
 
