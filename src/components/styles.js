@@ -1,3 +1,4 @@
+// General styles for the app
 import { makeStyles } from "@mui/styles";
 
 export default makeStyles(() => ({

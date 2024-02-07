@@ -1,3 +1,4 @@
+// This file is used to export all the components in the components folder to be used in other files.
 export { default as Actors } from "./Actors/Actors";
 export { default as MovieInformation } from "./MovieInformation/MovieInformation";
 export { default as Movies } from "./Movies/Movies";
