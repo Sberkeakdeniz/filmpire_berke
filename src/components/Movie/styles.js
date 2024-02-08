@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     fontWeight: 'bolder',
     textDecoration: 'none',
-    [theme.breakpoints.up('xs')]: {
+    [theme.breakpoints.up('xs')]: { // Styles for extra small devices (portrait phones, less than 576px)
       display: 'flex',
       flexDirection: 'column',
     },
