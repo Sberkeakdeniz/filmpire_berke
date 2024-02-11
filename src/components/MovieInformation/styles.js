@@ -1,4 +1,4 @@
-// General styles for the app
+// Code: MovieInformation styles
 import { makeStyles } from '@mui/styles';
 import { getLCP } from 'web-vitals';
 
@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       margin: '0 auto',
       width: '50%',
-      height: '350px',
+      // height: '350px',
     },
     [theme.breakpoints.down('sm')]: {
       margin: '0 auto',
@@ -29,7 +29,7 @@ export default makeStyles((theme) => ({
     },
   },
   genresContainer: {
-    margin: '10px 0 !important',
+    margin: '10px 10px !important',
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
@@ -39,6 +39,7 @@ export default makeStyles((theme) => ({
     marginRight: '10px',
   },
   links: {
+    marginLeft: '10px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
