@@ -46,7 +46,7 @@ const MovieInformation = () => {
   return (
 
     <Grid container className={classes.containerSpaceAround}>
-      <Grid item sm={12} lg={4}>
+      <Grid item sm={12} lg={4} style={{ display: 'flex', marginBottom: '30px' }}>
         <img
           className={classes.poster}
           src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`}
@@ -57,21 +57,21 @@ const MovieInformation = () => {
         <Typography variant="h3" align="center" gutterBottom>
           {data?.title} ({data.release_date.split('-')[0]})
         </Typography>
-        <Typography variant="h5" align="center" gutterBottom>
+        <Typography variant="h5" align="center" gutterBottom style={{ width: '109%' }}>
           {data?.tagline} ({data.release_date.split('-')[0]})
         </Typography>
         <Grid item className={classes.containerSpaceAround}>
           <Box display="flex" align="center">
             <Rating readOnly value={data.vote_average / 2} />
-            <Typography variant="subtitle1" gutterBottom style={{ marginLeft: '10px' }}>
-              {data.vote_average}
+            <Typography variant="subtitle1" gutterBottom style={{ marginLeft: '10px', marginRight: '10px' }}>
+              {data?.vote_average} / 10
             </Typography>
           </Box>
-          <Typography variant="h6" align="center" gutterBottom>
-            {data?.runtime}min / {data?.spoken_languages.length > 0 ? `${data?.spoken_languages[0].name}` : 'Unknown'} ;
+          <Typography variant="h6" align="center" gutterBottom style={{ margin: '0 10px' }}>
+            {data?.runtime}min | Language: {data?.spoken_languages[0].name} ;
           </Typography>
         </Grid>
-        <Grid item className={classes.genresContainer}>
+        <Grid item className={classes.genresContainer} style={{ padding: '5px' }}>
           {data?.genres?.map((genre) => (
             <Link key={genre.name} className={classes.links} to="/" onClick={() => dispatch(selectGenreOrCategory(genre.id))}>
               <img src={genreIcons[genre.name.toLowerCase()]} className={classes.genreImage} height={30} />
@@ -81,7 +81,7 @@ const MovieInformation = () => {
             </Link>
           ))}
         </Grid>
-        <Typography variant="h5" gutterBottom style={{ marginTop: '10px' }}>
+        <Typography variant="h5" gutterBottom style={{ marginTop: '10px', width: '100%' }}>
           Overview
         </Typography>
         <Typography style={{ marginBottom: '2rem' }}>
