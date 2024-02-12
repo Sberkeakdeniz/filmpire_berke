@@ -14,6 +14,7 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
   },
   genreImage: {
-    filter: theme.palette.mode === 'dark' ? 'dark' : 'invert(1)',
+    //* This changes the sidebar genre icons color when we change dark mode or light mode
+    filter: theme.palette.mode === 'dark' && 'invert(1)',
   },
 }));

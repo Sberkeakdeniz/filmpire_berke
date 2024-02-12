@@ -14,7 +14,7 @@ const Profile = () => {
   const { data: favoriteMovies, refetch: refetchFavorites } = useGetListQuery({ listName: 'favorite/movies', accountId: user.id, sessionId: localStorage.getItem('session_id'), page: 1 });
   const { data: watchListMovies, refetch: refetchWatchlisted } = useGetListQuery({ listName: 'watchlist/movies', accountId: user.id, sessionId: localStorage.getItem('session_id'), page: 1 });
 
-  // this refetch the data without reloading the page (for displaying the current favorite movies at the profile page)
+  // This function refetchs the data without reloading the page (for displaying the current favorite movies at the profile page)
   useEffect(() => {
     refetchFavorites();
     refetchWatchlisted();
