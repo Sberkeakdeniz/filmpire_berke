@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { cleanup } from '@testing-library/react';
 import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import { useGetGenresQuery } from '../../services/TMDB';
 import useStyles from './styles';
@@ -25,9 +26,13 @@ const Sidebar = ({ setMobileOpen }) => {
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch(); // transfer data fron our component do redux
 
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
+
   return (
     <>
-      <Link to="/" className={classes.imageLink}>
+      <Link to="/" className={classes.imageLink} onClick={() => dispatch(selectGenreOrCategory('popular'))}>
         <img
           className={classes.image}
           src={theme.palette.mode === 'light' ? redLogo : blueLogo}
