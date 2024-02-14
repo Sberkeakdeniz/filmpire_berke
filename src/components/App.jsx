@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { CssBaseline } from '@mui/material';
 import { Route, Switch } from 'react-router-dom';
 
 // Importing the styles from the styles.js file.
 import useStyles from './styles';
+import useAlan from './Alan';
 
 // Importing the components that will be used in the App component.
 import {
@@ -17,6 +18,9 @@ import {
 // App component is the main component that holds the NavBar and the main content of the app.
 const App = () => {
   const classes = useStyles();
+  const alanButtonContainer = useRef();
+
+  useAlan();
 
   return (
     <div className={classes.root}>
@@ -39,6 +43,7 @@ const App = () => {
           </Route>
         </Switch>
       </main>
+      <div ref={alanButtonContainer} />
     </div>
   );
 };
